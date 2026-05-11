@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gewerbestrom für Unternehmen | ALVA Energie</title>
+<meta name="description" content="Ganzheitliche Energieversorgung für Unternehmen. Solarstrom vom eigenen Dach, kombiniert mit intelligenter Strombeschaffung.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&f[]=satoshi@400,500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --alva-black: #050B13;
+    --alva-yellow: #FFFC2E;
+    --alva-anthrazit: #253040;
+    --alva-light-blue: #5271FF;
+    --pure-white: #FFFFFF;
+    --alva-pale-grey: #EDEDED;
+    --alva-steel: #899EBE;
+    --alva-pale-steel: #BAC6D9;
+    --alva-pale-yellow: #FFFED5;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Generalsans', sans-serif;
+    color: var(--alva-black);
+    background: var(--pure-white);
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ──────────────────────────────────────────────── */
+  /* TOPBAR + NAV                                     */
+  /* ──────────────────────────────────────────────── */
+  .topbar {
+    background: var(--alva-black);
+    color: var(--pure-white);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-size: 14px;
+  }
+  .topbar-symbol {
+    display: inline-flex; align-items: center;
+    margin-right: 4px;
+  }
+  .topbar-symbol svg { height: 18px; width: auto; }
+  .topbar a { text-decoration: underline; font-weight: 500; }
+  .topbar a:hover { color: var(--alva-yellow); }
+
+  .nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: transparent;
+    padding: 20px 40px 0;
+  }
+
+  nav.nav-pill {
+    max-width: 1300px;
+    margin: 0 auto;
+    background: var(--alva-black);
+    border-radius: 50px;
+    padding: 16px 24px 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: 0 8px 24px rgba(5, 11, 19, 0.08);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center;
+    height: 38px;
+  }
+  .nav-logo svg { height: 38px; width: auto; }
+
+  .nav-links {
+    display: flex; gap: 28px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    color: var(--pure-white);
+  }
+  .nav-links a {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 4px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--alva-yellow); }
+
+  .nav-right {
+    display: flex; align-items: center; gap: 16px;
+  }
+
+  .lang-switch {
+    display: flex; gap: 2px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--alva-steel);
+    letter-spacing: 0.5px;
+  }
+  .lang-switch button {
+    background: none; border: none; color: inherit; cursor: pointer;
+    padding: 4px 6px; font: inherit;
+  }
+  .lang-switch button.active { color: var(--pure-white); }
+  .lang-switch .sep { color: var(--alva-steel); padding: 4px 0; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    padding: 12px 22px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s, background 0.2s;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--alva-yellow);
+    color: var(--alva-anthrazit);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px rgba(255, 252, 46, 0.4);
+  }
+  .btn-outline-dark {
+    background: transparent;
+    color: var(--alva-black);
+    border: 1px solid var(--alva-black);
+  }
+  .btn-outline-dark:hover { background: var(--alva-black); color: var(--pure-white); }
+  .btn-large { padding: 16px 30px; font-size: 0.85rem; }
+
+  /* ──────────────────────────────────────────────── */
+  /* HERO                                             */
+  /* ──────────────────────────────────────────────── */
+  .hero {
+    padding: 120px 0 80px;
+    background: var(--pure-white);
+    position: relative;
+  }
+  .hero-inner {
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--alva-anthrazit);
+    background: var(--alva-pale-grey);
+    padding: 8px 16px;
+    border-radius: 50px;
+    margin-bottom: 32px;
+  }
+
+  .hero h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: clamp(44px, 7vw, 92px);
+    line-height: 1.02;
+    letter-spacing: -1.5px;
+    margin-bottom: 32px;
+    color: var(--alva-black);
+  }
+
+  .hero-sub {
+    font-family: 'Generalsans', sans-serif;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--alva-anthrazit);
+    max-width: 720px;
+    margin: 0 auto 48px;
+  }
+
+  .hero-actions {
+    display: inline-flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-image-block {
+    margin-top: 100px;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 21 / 9;
+    background: var(--alva-pale-grey);
+    position: relative;
+  }
+  .hero-image-block img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+
+  /* Floating stat on hero image */
+  .hero-image-stat {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    background: rgba(5, 11, 19, 0.88);
+    backdrop-filter: blur(12px);
+    color: var(--pure-white);
+    padding: 24px 28px;
+    border-radius: 16px;
+    max-width: 320px;
+  }
+  .hero-image-stat .stat-num {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 1;
+    color: var(--alva-yellow);
+    margin-bottom: 8px;
+  }
+  .hero-image-stat .stat-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    color: var(--pure-white);
+    line-height: 1.4;
+  }
+
+  /* ──────────────────────────────────────────────── */
+  /* PRESS BAR                                        */
+  /* ──────────────────────────────────────────────── */
+  .press {
+    padding: 80px 0;
+    background: var(--pure-white);
+    text-align: center;
+  }
+  .press-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--alva-anthrazit);
+    margin-bottom: 36px;
+  }
+  .press-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    opacity: 0.6;
+  }
+  .press-logo {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 22px;
+    color: var(--alva-anthrazit);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .press-logo.cap { font-family: 'Outfit', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 18px; }
+
+  /* ──────────────────────────────────────────────── */
+  /* STATEMENT                                        */
+  /* ──────────────────────────────────────────────── */
+  .statement {
+    padding: 140px 0;
+    background: var(--alva-pale-grey);
+    text-align: center;
+  }
+  .statement h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -1px;
+    max-width: 18ch;
+    margin: 0 auto;
+    color: var(--alva-black);
+  }
+  .statement .yellow-mark {
+    color: var(--alva-black);
+    position: relative;
+    display: inline-block;
+  }
+  .statement .yellow-mark::after {
+    content: '';
+    position: absolute;
+    left: -4px; right: -4px;
+    bottom: 6px;
+    height: 14px;
+    background: var(--alva-yellow);
+    z-index: -1;
+    border-radius: 2px;
+  }
+
+  /* ──────────────────────────────────────────────── */
+  /* MIETERSTROM EXPLAINER                            */
+  /* ──────────────────────────────────────────────── */
+  .explainer {
+    padding: 140px 0;
+    background: var(--pure-white);
+  }
+  .section-eyebrow {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--alva-anthrazit);
+    margin-bottom: 20px;
+  }
+  .section-heading {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.08;
+    letter-spacing: -1px;
+    color: var(--alva-black);
+    margin-bottom: 24px;
+    max-width: 22ch;
+  }
+
+  .explainer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 96px;
+    align-items: start;
+  }
+
+  .explainer-copy p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--alva-anthrazit);
+    margin-bottom: 20px;
+  }
+  .explainer-copy p strong { color: var(--alva-black); font-weight: 600; }
+
+  /* Right column: stacked points with big numbers */
+  .explainer-points {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .explainer-point {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 28px;
+    align-items: start;
+    padding: 32px 0;
+    border-top: 1px solid var(--alva-pale-grey);
+  }
+  .explainer-point:last-child { border-bottom: 1px solid var(--alva-pale-grey); }
+  .explainer-point-num {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--alva-black);
+    letter-spacing: -2px;
+  }
+  .explainer-point-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.25;
+    color: var(--alva-black);
+    margin-bottom: 8px;
+  }
+  .explainer-point-text {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--alva-anthrazit);
+  }
+
+  /* Pricing callout below the grid */
+  .pricing-callout {
+    margin-top: 80px;
+    background: var(--alva-black);
+    color: var(--pure-white);
+    border-radius: 16px;
+    padding: 64px 48px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .pricing-callout-num {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: clamp(64px, 9vw, 120px);
+    line-height: 0.9;
+    letter-spacing: -3px;
+    color: var(--alva-yellow);
+  }
+  .pricing-callout-divider {
+    width: 1px;
+    height: 80px;
+    background: rgba(255,255,255,0.15);
+  }
+  .pricing-callout-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--pure-white);
+    font-weight: 400;
+  }
+  .pricing-callout-text strong {
+    color: var(--alva-yellow);
+    font-weight: 600;
+  }
+  .pricing-callout-footnote {
+    font-size: 12px;
+    color: var(--alva-steel);
+    margin-top: 12px;
+    font-family: 'Generalsans', sans-serif;
+  }
+
+  /* ──────────────────────────────────────────────── */
+  /* VORTEILE                                         */
+  /* ──────────────────────────────────────────────── */
+  .vorteile {
+    padding: 140px 0;
+    background: var(--alva-pale-grey);
+  }
+  .vorteile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 64px;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .vorteile-header .section-heading { margin-bottom: 0; }
+
+  .vorteile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .vorteil-card {
+    background: var(--pure-white);
+    border-radius: 16px;
+    padding: 40px 36px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .vorteil-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(5, 11, 19, 0.08);
+  }
+  .vorteil-card.featured {
+    background: var(--alva-black);
+    color: var(--pure-white);
+  }
+  .vorteil-card.featured .vorteil-title { color: var(--pure-white); }
+  .vorteil-card.featured .vorteil-text { color: var(--alva-steel); }
+  .vorteil-card.featured .vorteil-icon { background: var(--alva-yellow); }
+  .vorteil-card.featured .vorteil-icon svg { stroke: var(--alva-anthrazit); }
+
+  .vorteil-icon {
+    width: 56px; height: 56px;
+    background: var(--alva-yellow);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .vorteil-icon svg { width: 26px; height: 26px; stroke: var(--alva-anthrazit); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  .vorteil-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--alva-black);
+  }
+  .vorteil-text {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--alva-anthrazit);
+  }
+
+  /* ──────────────────────────────────────────────── */
+  /* TRUST / KUNDEN LOGOS                             */
+  /* ──────────────────────────────────────────────── */
+  .trust {
+    padding: 140px 0;
+    background: var(--pure-white);
+    text-align: center;
+  }
+  .trust h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: var(--alva-black);
+    margin-bottom: 64px;
+  }
+  .trust-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 32px 48px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .trust-logo-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    opacity: 0.55;
+    transition: opacity 0.2s;
+    filter: grayscale(1);
+  }
+  .trust-logo-cell:hover { opacity: 1; filter: grayscale(0); }
+  .trust-logo-cell svg, .trust-logo-cell img { max-height: 48px; width: auto; }
+
+  /* Text fallback logos (until real SVGs are dropped in) */
+  .trust-mark {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--alva-anthrazit);
+  }
+  .trust-mark.serif { font-family: Georgia, serif; font-weight: 400; font-style: italic; font-size: 22px; }
+  .trust-mark.condensed { letter-spacing: 2px; font-weight: 800; font-size: 22px; }
+
+  /* ──────────────────────────────────────────────── */
+  /* TESTIMONIALS                                     */
+  /* ──────────────────────────────────────────────── */
+  .testimonials {
+    padding: 140px 0;
+    background: var(--alva-black);
+    color: var(--pure-white);
+  }
+  .testimonials .section-eyebrow { color: var(--alva-yellow); }
+  .testimonials .section-heading { color: var(--pure-white); margin-bottom: 64px; }
+
+  .testimonials-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 40px; margin-bottom: 64px; flex-wrap: wrap;
+  }
+  .testimonials-header .section-heading { margin-bottom: 0; }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .testimonial-card {
+    background: var(--alva-anthrazit);
+    padding: 40px 36px;
+    border-radius: 16px;
+    display: flex; flex-direction: column;
+    gap: 28px;
+    transition: transform 0.25s ease;
+  }
+  .testimonial-card:hover { transform: translateY(-4px); }
+
+  .stars {
+    display: flex; gap: 4px;
+  }
+  .stars svg { width: 18px; height: 18px; fill: var(--alva-yellow); }
+
+  .testimonial-quote {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.45;
+    color: var(--pure-white);
+    flex: 1;
+  }
+  .testimonial-author {
+    display: flex; flex-direction: column; gap: 4px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .author-name {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--pure-white);
+  }
+  .author-company {
+    font-size: 13px;
+    color: var(--alva-steel);
+  }
+
+  /* ──────────────────────────────────────────────── */
+  /* PROZESS                                          */
+  /* ──────────────────────────────────────────────── */
+  .prozess {
+    padding: 140px 0;
+    background: var(--pure-white);
+  }
+  .prozess-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+  }
+  .prozess-header .section-heading {
+    margin: 0 auto 20px;
+    max-width: none;
+  }
+  .prozess-header p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--alva-anthrazit);
+  }
+
+  .prozess-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .prozess-step {
+    position: relative;
+  }
+  .prozess-step-num {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 48px; height: 48px;
+    background: var(--alva-yellow);
+    border-radius: 50%;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--alva-anthrazit);
+    margin-bottom: 24px;
+  }
+  .prozess-step-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--alva-black);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .prozess-step-text {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--alva-anthrazit);
+  }
+
+  /* ──────────────────────────────────────────────── */
+  /* KONTAKT                                          */
+  /* ──────────────────────────────────────────────── */
+  .kontakt {
+    padding: 140px 0;
+    background: var(--alva-pale-grey);
+  }
+  .kontakt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 96px;
+    align-items: start;
+  }
+  .kontakt-left h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -1px;
+    color: var(--alva-black);
+    margin-bottom: 28px;
+  }
+  .kontakt-left > p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--alva-anthrazit);
+    margin-bottom: 40px;
+    max-width: 460px;
+  }
+  .kontakt-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 16px;
+    color: var(--alva-black);
+  }
+  .check-icon {
+    width: 26px; height: 26px;
+    background: var(--alva-yellow);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .check-icon svg { width: 14px; height: 14px; stroke: var(--alva-anthrazit); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  .kontakt-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-top: 32px;
+    border-top: 1px solid var(--alva-pale-steel);
+  }
+  .kontakt-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 15px;
+    color: var(--alva-anthrazit);
+  }
+  .kontakt-meta-icon {
+    width: 36px; height: 36px;
+    background: var(--alva-yellow);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .kontakt-meta-icon svg { width: 16px; height: 16px; stroke: var(--alva-anthrazit); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .kontakt-meta-item a { font-weight: 500; color: var(--alva-black); }
+  .kontakt-meta-item a:hover { color: var(--alva-light-blue); }
+
+  /* Form */
+  .form-card {
+    background: var(--pure-white);
+    border-radius: 16px;
+    padding: 48px;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
+  }
+  .form-field { display: flex; flex-direction: column; position: relative; }
+  .form-field.span2 { grid-column: span 2; }
+
+  .form-field label {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--alva-anthrazit);
+    margin-bottom: 10px;
+  }
+  .form-field label .req { color: var(--alva-anthrazit); }
+
+  .form-field input,
+  .form-field textarea {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid var(--alva-pale-steel);
+    background: transparent;
+    border-radius: 0;
+    padding: 8px 0 12px;
+    color: var(--alva-black);
+    transition: border-color 0.2s;
+    outline: none;
+    width: 100%;
+  }
+  .form-field input::placeholder,
+  .form-field textarea::placeholder {
+    color: var(--alva-pale-steel);
+  }
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-bottom-color: var(--alva-black);
+  }
+  .form-field textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--alva-anthrazit);
+    cursor: pointer;
+  }
+  .form-checkbox input {
+    margin-top: 3px; flex-shrink: 0;
+    width: 16px; height: 16px;
+    accent-color: var(--alva-black);
+  }
+  .form-checkbox a { color: var(--alva-light-blue); text-decoration: underline; }
+
+  .form-submit-row {
+    grid-column: span 2;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; margin-top: 16px; flex-wrap: wrap;
+  }
+  .form-microcopy {
+    font-size: 12px;
+    color: var(--alva-anthrazit);
+    opacity: 0.7;
+  }
+
+  .form-success, .form-error {
+    display: none;
+    padding: 18px 22px;
+    border-radius: 12px;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .form-success.show, .form-error.show { display: block; }
+  .form-success {
+    background: var(--alva-pale-yellow);
+    color: var(--alva-anthrazit);
+    border-left: 3px solid var(--alva-yellow);
+  }
+  .form-error {
+    background: #FEE;
+    color: #921;
+    border-left: 3px solid #DC2626;
+  }
+
+  /* ──────────────────────────────────────────────── */
+  /* FOOTER                                           */
+  /* ──────────────────────────────────────────────── */
+  footer {
+    background: var(--alva-black);
+    color: var(--alva-steel);
+    padding: 80px 0 40px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 56px;
+    margin-bottom: 56px;
+  }
+  .footer-brand svg { height: 40px; margin-bottom: 24px; }
+  .footer-brand p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 300px;
+    color: var(--alva-steel);
+  }
+  .footer-col h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--pure-white);
+    margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 12px; font-size: 14px; }
+  .footer-col a { transition: color 0.2s; }
+  .footer-col a:hover { color: var(--alva-yellow); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 28px;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px; font-size: 13px; flex-wrap: wrap;
+  }
+  .footer-legal { display: flex; gap: 24px; flex-wrap: wrap; }
+
+  /* ──────────────────────────────────────────────── */
+  /* SCROLL-REVEAL                                    */
+  /* ──────────────────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ──────────────────────────────────────────────── */
+  /* RESPONSIVE                                       */
+  /* ──────────────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .nav-links { display: none; }
+    .pricing-callout { grid-template-columns: 1fr; text-align: center; gap: 24px; }
+    .pricing-callout-divider { width: 80px; height: 1px; margin: 0 auto; }
+    .explainer-grid { grid-template-columns: 1fr; gap: 48px; }
+    .vorteile-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .prozess-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .kontakt-grid { grid-template-columns: 1fr; gap: 48px; }
+    .trust-logo-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 720px) {
+    .nav-wrap { padding: 14px 16px 0; }
+    nav.nav-pill { padding: 12px 16px 12px 20px; border-radius: 50px; }
+    .topbar { padding: 10px 16px; font-size: 13px; flex-wrap: wrap; text-align: center; }
+    .container { padding: 0 20px; }
+    .hero { padding: 72px 0 56px; }
+    .hero-image-block { aspect-ratio: 4 / 5; margin-top: 64px; }
+    .hero-image-stat { bottom: 20px; left: 20px; right: 20px; max-width: none; padding: 20px 22px; }
+    .press, .statement, .explainer, .vorteile, .trust, .testimonials, .prozess, .kontakt { padding: 80px 0; }
+    .press-logos { gap: 32px; }
+    .vorteile-grid { grid-template-columns: 1fr; }
+    .vorteile-header, .testimonials-header { flex-direction: column; align-items: flex-start; }
+    .prozess-steps { grid-template-columns: 1fr; }
+    .trust-logo-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .form-card { padding: 32px 24px; }
+    .form-grid { grid-template-columns: 1fr; gap: 28px; }
+    .form-field.span2, .form-submit-row { grid-column: span 1; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .lang-switch { display: none; }
+    .explainer-point { grid-template-columns: 60px 1fr; gap: 20px; padding: 24px 0; }
+    .explainer-point-num { font-size: 42px; }
+    .pricing-callout { padding: 48px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─────────── TOPBAR ─────────── -->
+<div class="topbar">
+  <span class="topbar-symbol">
+    <svg viewBox="0 0 216 132" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M143.5 0H122H122.509L180.762 105.665L194.382 131H216L143.5 0ZM122.509 0H122L180.762 105.665L122.509 0Z" fill="white"/>
+      <path d="M105.993 0H72.0629L0 131.447H39.5855L52.977 106.025H134.779L148.171 131.447H188.11L116.047 0H105.993ZM52.977 106.025L93.8977 28.2671L134.779 106.025H52.977Z" fill="white"/>
+    </svg>
+  </span>
+  <span>Treffen Sie uns auf dem P5 Property Kongress, 20.–21. Mai 2026.</span>
+  <a href="#">Termin buchen</a>
+</div>
+
+<!-- ─────────── NAV ─────────── -->
+<div class="nav-wrap">
+  <nav class="nav-pill">
+    <a href="#" class="nav-logo" aria-label="ALVA Energie">
+      <svg viewBox="0 0 1001 406" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <rect x="10" y="10" width="980.33" height="385.493" stroke="white" stroke-width="20"/>
+        <path d="M281.993 137H248.063L176 268.447H215.585L228.977 243.025H310.779L324.171 268.447H364.11L292.047 137H281.993ZM228.977 243.025L269.898 165.267L310.779 243.025H228.977Z" fill="white"/>
+        <path d="M407.267 137H374.318V268.493H517.148V234.955H407.267V137Z" fill="white"/>
+        <path d="M630.235 137L576.511 236.495L522.631 137H482.535L554.127 268.493H598.111L669.663 137H630.235Z" fill="white"/>
+        <path d="M752.267 137H708.284L636.221 268.447H675.806L689.198 243.025H771L784.391 268.447H824.33L752.267 137ZM689.198 243.025L730.118 165.267L771 243.025H689.198Z" fill="white"/>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="#mieterstrom">So funktioniert es</a>
+      <a href="#vorteile">Vorteile</a>
+      <a href="#kunden">Kunden</a>
+      <a href="#prozess">Wechsel</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switch" aria-label="Sprache wählen">
+        <button class="active" type="button">DE</button>
+        <span class="sep">/</span>
+        <button type="button">EN</button>
+      </div>
+      <a href="#kontakt" class="btn btn-primary">Anfrage stellen</a>
+    </div>
+  </nav>
+</div>
+
+<!-- ─────────── HERO ─────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <span class="hero-eyebrow reveal">Gewerbestrom für Unternehmen</span>
+      <h1 class="reveal">
+        Ganzheitliche Energieversorgung für Unternehmen.
+      </h1>
+      <p class="hero-sub reveal">
+        Solarstrom direkt vom Dach Ihrer Immobilie, kombiniert mit intelligenter Strombeschaffung und Energiemanagement. Für sinkende Kosten, mehr Versorgungssicherheit und messbare CO₂-Reduktion.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#kontakt" class="btn btn-primary btn-large">Anfrage stellen →</a>
+        <a href="#mieterstrom" class="btn btn-outline-dark btn-large">Mehr erfahren</a>
+      </div>
+    </div>
+
+    <div class="hero-image-block reveal">
+      <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1800&q=85&auto=format&fit=crop"
+           alt="Solaranlage auf einem Gewerbedach">
+      <div class="hero-image-stat">
+        <div class="stat-num">50%</div>
+        <div class="stat-label">günstiger pro kWh als konventioneller Netzstrom</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── PRESS ─────────── -->
+<section class="press">
+  <div class="container">
+    <div class="press-label reveal">Bekannt aus</div>
+    <div class="press-logos reveal">
+      <span class="press-logo">Der Spiegel</span>
+      <span class="press-logo cap">immobilienmanager</span>
+      <span class="press-logo">Börsen-Zeitung</span>
+      <span class="press-logo cap">manager magazin</span>
+      <span class="press-logo cap">ZfK</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── STATEMENT ─────────── -->
+<section class="statement">
+  <div class="container">
+    <h2 class="reveal">
+      Machen Sie sich <span class="yellow-mark">unabhängig</span> von steigenden Strom- und CO₂-Preisen.
+    </h2>
+  </div>
+</section>
+
+<!-- ─────────── MIETERSTROM EXPLAINER ─────────── -->
+<section class="explainer" id="mieterstrom">
+  <div class="container">
+    <div class="explainer-grid">
+      <div class="explainer-copy reveal">
+        <div class="section-eyebrow">So funktioniert es</div>
+        <h2 class="section-heading">Darum ist Dachstrom günstiger.</h2>
+        <p>
+          Die PV-Anlage liegt direkt auf Ihrem Dach. Der erzeugte Strom wird vor Ort verbraucht und nicht über das öffentliche Netz geleitet.
+        </p>
+        <p>
+          Dadurch entfallen <strong>Netzentgelte, Konzessionsabgabe, KWKG-Umlage, Stromsteuer und weitere Umlagen</strong> komplett. Übrig bleiben nur Erzeugung, Beschaffung, Vertrieb und Umsatzsteuer.
+        </p>
+        <p>
+          Das Ergebnis: ein Strompreis, der dauerhaft und planbar <strong>deutlich unter dem klassischen Gewerbe-Netztarif</strong> liegt. Ohne Verzicht auf Versorgungssicherheit, weil wir den Reststrombedarf über strukturierte Strombeschaffung sicher abdecken.
+        </p>
+      </div>
+
+      <div class="explainer-points reveal">
+        <div class="explainer-point">
+          <div class="explainer-point-num">01</div>
+          <div>
+            <div class="explainer-point-title">PV-Anlage auf Ihrem Dach</div>
+            <div class="explainer-point-text">Wir planen, finanzieren und betreiben die Anlage. Sie nutzen den Strom direkt vor Ort, ohne Investitionsrisiko.</div>
+          </div>
+        </div>
+        <div class="explainer-point">
+          <div class="explainer-point-num">02</div>
+          <div>
+            <div class="explainer-point-title">Verbrauch ohne Netz-Umweg</div>
+            <div class="explainer-point-text">Strom fließt direkt vom Dach in Ihren Betrieb. Keine Netzentgelte, keine Umlagen, keine Stromsteuer auf diesen Anteil.</div>
+          </div>
+        </div>
+        <div class="explainer-point">
+          <div class="explainer-point-num">03</div>
+          <div>
+            <div class="explainer-point-title">Reststrom intelligent beschafft</div>
+            <div class="explainer-point-text">Was die Anlage nicht liefert, decken wir über strukturierte Beschaffungsstrategien zu marktoptimierten Konditionen.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-callout reveal">
+      <div class="pricing-callout-num">50%</div>
+      <div class="pricing-callout-divider"></div>
+      <div>
+        <div class="pricing-callout-text">
+          <strong>Ersparnis pro Kilowattstunde</strong><br>
+          gegenüber konventionellem Gewerbestrom.
+        </div>
+        <div class="pricing-callout-footnote">¹ Vergleichsrechnung Dachstrom vs. durchschnittlicher Gewerbestromtarif Deutschland. Genaue Kalkulation im individuellen Angebot.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── VORTEILE ─────────── -->
+<section class="vorteile" id="vorteile">
+  <div class="container">
+    <div class="vorteile-header">
+      <div class="reveal">
+        <div class="section-eyebrow">Ihre Vorteile</div>
+        <h2 class="section-heading">Energie als strategischer Hebel.</h2>
+      </div>
+    </div>
+
+    <div class="vorteile-grid">
+      <div class="vorteil-card reveal">
+        <div class="vorteil-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="vorteil-title">Garantiert günstigster Preis</div>
+        <div class="vorteil-text">Im Vergleich zu herkömmlichen Netztarifen. Transparent und vertraglich zugesichert.</div>
+      </div>
+
+      <div class="vorteil-card featured reveal">
+        <div class="vorteil-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="vorteil-title">100% Planungssicherheit</div>
+        <div class="vorteil-text">Dauerhaft günstig und voll versorgt. Reststrombezug über strukturierte Beschaffung.</div>
+      </div>
+
+      <div class="vorteil-card reveal">
+        <div class="vorteil-icon">
+          <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.71"/></svg>
+        </div>
+        <div class="vorteil-title">Kombinierbar mit Langzeitverträgen</div>
+        <div class="vorteil-text">Bestehende Stromverträge müssen nicht gekündigt werden. Wir integrieren uns nahtlos.</div>
+      </div>
+
+      <div class="vorteil-card reveal">
+        <div class="vorteil-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3v18M8 7l4-4 4 4M5 15a7 7 0 0 0 14 0"/></svg>
+        </div>
+        <div class="vorteil-title">Nachhaltige Versorgung</div>
+        <div class="vorteil-text">Solarstrom vom eigenen Dach. Messbare CO₂-Reduktion und ESG-Compliance ohne Aufwand.</div>
+      </div>
+
+      <div class="vorteil-card reveal">
+        <div class="vorteil-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="vorteil-title">Persönlicher Ansprechpartner</div>
+        <div class="vorteil-text">Fester Kontakt statt Callcenter. Klare Zuständigkeit über die gesamte Vertragslaufzeit.</div>
+      </div>
+
+      <div class="vorteil-card reveal">
+        <div class="vorteil-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="vorteil-title">Ein Anbieter für alles</div>
+        <div class="vorteil-text">PV, Speicher, Energiemanagement und Strombeschaffung aus einer Hand. Keine Schnittstellen-Probleme.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── TRUST / KUNDEN ─────────── -->
+<section class="trust" id="kunden">
+  <div class="container">
+    <h2 class="reveal">Unternehmen, die auf Solarstrom von ALVA setzen.</h2>
+    <div class="trust-logo-grid reveal">
+      <div class="trust-logo-cell"><span class="trust-mark">Netto</span></div>
+      <div class="trust-logo-cell"><span class="trust-mark condensed">LAGERLÖWE</span></div>
+      <div class="trust-logo-cell"><span class="trust-mark">LB≡BW</span></div>
+      <div class="trust-logo-cell"><span class="trust-mark serif">Engel &amp; Völkers</span></div>
+      <div class="trust-logo-cell"><span class="trust-mark condensed">BECKEN</span></div>
+      <div class="trust-logo-cell"><span class="trust-mark condensed">DHL</span></div>
+      <div class="trust-logo-cell"><span class="trust-mark">MyPlace</span></div>
+      <div class="trust-logo-cell"><span class="trust-mark condensed">STRABAG</span></div>
+      <div class="trust-logo-cell"><span class="trust-mark">Wolff &amp; Müller</span></div>
+      <div class="trust-logo-cell"><span class="trust-mark serif">Otto Wulff</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── TESTIMONIALS ─────────── -->
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <div>
+        <div class="section-eyebrow">Kundenstimmen</div>
+        <h2 class="section-heading">Was unsere Kunden sagen.</h2>
+      </div>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-quote">
+          „Warum sollten wir teuren Gewerbestrom für 27 Cent beziehen, wenn wir ihn günstig von unseren Dächern bekommen."
+        </p>
+        <div class="testimonial-author">
+          <span class="author-name">Herbert Altmeyer</span>
+          <span class="author-company">NordTransit (DHL)</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-quote">
+          „Sehr unkomplizierter Wechsel und unsere Produktion läuft jetzt direkt über den Solarstrom. Und das auch noch 20% günstiger als vorher."
+        </p>
+        <div class="testimonial-author">
+          <span class="author-name">Jonathan Heuringer</span>
+          <span class="author-company">WMO Group</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-quote">
+          „Wir hatten viele schlechte Erfahrungen mit anderen Firmen. Bei ALVA hatte ich sofort das Gefühl: Die wissen, wovon sie sprechen und sie wollen das wirklich."
+        </p>
+        <div class="testimonial-author">
+          <span class="author-name">Andreas Fleder</span>
+          <span class="author-company">MyPlace SelfStorage</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── PROZESS ─────────── -->
+<section class="prozess" id="prozess">
+  <div class="container">
+    <div class="prozess-header reveal">
+      <div class="section-eyebrow">In 4 Schritten</div>
+      <h2 class="section-heading">Einfach wechseln, Preisvorteil sichern.</h2>
+      <p>Wir machen Ihnen den Wechsel so leicht wie möglich. Vom ersten Gespräch bis zum nahtlosen Übergang dauert es in der Regel wenige Wochen.</p>
+    </div>
+
+    <div class="prozess-steps">
+      <div class="prozess-step reveal">
+        <div class="prozess-step-num">1</div>
+        <div class="prozess-step-title">Anfrage stellen</div>
+        <div class="prozess-step-text">Sie senden uns Ihre Kontaktdaten. Wir melden uns innerhalb von 24 Stunden.</div>
+      </div>
+      <div class="prozess-step reveal">
+        <div class="prozess-step-num">2</div>
+        <div class="prozess-step-title">Angebot prüfen</div>
+        <div class="prozess-step-text">Sie erhalten ein individuelles Angebot, prüfen es in Ruhe und bestätigen digital.</div>
+      </div>
+      <div class="prozess-step reveal">
+        <div class="prozess-step-num">3</div>
+        <div class="prozess-step-title">Wir kündigen für Sie</div>
+        <div class="prozess-step-text">Wir übernehmen die Kündigung Ihres bisherigen Stromvertrags. Sie müssen nichts tun.</div>
+      </div>
+      <div class="prozess-step reveal">
+        <div class="prozess-step-num">4</div>
+        <div class="prozess-step-title">Nahtloser Wechsel</div>
+        <div class="prozess-step-text">Versorgung läuft ohne Unterbrechung weiter. Ab sofort günstiger Solarstrom.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── KONTAKT ─────────── -->
+<section class="kontakt" id="kontakt">
+  <div class="container">
+    <div class="kontakt-grid">
+      <div class="kontakt-left reveal">
+        <div class="section-eyebrow">Anfrage stellen</div>
+        <h2>Lassen Sie uns sprechen.</h2>
+        <p>
+          Hinterlassen Sie uns kurz Ihre Kontaktdaten. Wir melden uns innerhalb von 24 Stunden mit einer ersten Einschätzung.
+        </p>
+
+        <div class="kontakt-checklist">
+          <div class="check-item">
+            <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>Unverbindliche Erstberatung</span>
+          </div>
+          <div class="check-item">
+            <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>Individuelle Wirtschaftlichkeitsrechnung</span>
+          </div>
+          <div class="check-item">
+            <span class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span>Antwort innerhalb von 24 Stunden</span>
+          </div>
+        </div>
+
+        <div class="kontakt-meta">
+          <div class="kontakt-meta-item">
+            <span class="kontakt-meta-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <a href="tel:03062939213">030 62939213</a>
+          </div>
+          <div class="kontakt-meta-item">
+            <span class="kontakt-meta-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <a href="mailto:info@alva-energie.de">info@alva-energie.de</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <div class="form-success" id="formSuccess">
+          ✓ Vielen Dank für Ihre Anfrage. Wir melden uns innerhalb von 24 Stunden bei Ihnen.
+        </div>
+        <div class="form-error" id="formError">
+          Beim Versand ist etwas schiefgelaufen. Bitte schreiben Sie uns direkt an <strong>info@alva-energie.de</strong>.
+        </div>
+
+        <form id="contactForm" class="form-grid" novalidate>
+          <div class="form-field">
+            <label for="name">Ihr Name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Vor- und Nachname">
+          </div>
+          <div class="form-field">
+            <label for="firma">Unternehmen <span class="req">*</span></label>
+            <input type="text" id="firma" name="firma" required placeholder="Firmenname">
+          </div>
+          <div class="form-field">
+            <label for="email">E-Mail-Adresse <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="name@firma.de">
+          </div>
+          <div class="form-field">
+            <label for="telefon">Telefonnummer</label>
+            <input type="tel" id="telefon" name="telefon" placeholder="+49 30 1234567">
+          </div>
+          <div class="form-field span2">
+            <label for="nachricht">Ihre Nachricht</label>
+            <textarea id="nachricht" name="nachricht" placeholder="Standort, ungefährer Jahresverbrauch, aktueller Vertrag — alles, was hilft."></textarea>
+          </div>
+          <div class="form-field span2">
+            <label class="form-checkbox">
+              <input type="checkbox" id="datenschutz" required>
+              <span>Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Kontaktaufnahme zu.</span>
+            </label>
+          </div>
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-primary btn-large">Anfrage senden →</button>
+            <span class="form-microcopy">Antwort in 24 h · keine Newsletter</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── FOOTER ─────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg viewBox="0 0 1001 406" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="10" y="10" width="980.33" height="385.493" stroke="white" stroke-width="20"/>
+          <path d="M281.993 137H248.063L176 268.447H215.585L228.977 243.025H310.779L324.171 268.447H364.11L292.047 137H281.993ZM228.977 243.025L269.898 165.267L310.779 243.025H228.977Z" fill="white"/>
+          <path d="M407.267 137H374.318V268.493H517.148V234.955H407.267V137Z" fill="white"/>
+          <path d="M630.235 137L576.511 236.495L522.631 137H482.535L554.127 268.493H598.111L669.663 137H630.235Z" fill="white"/>
+          <path d="M752.267 137H708.284L636.221 268.447H675.806L689.198 243.025H771L784.391 268.447H824.33L752.267 137ZM689.198 243.025L730.118 165.267L771 243.025H689.198Z" fill="white"/>
+        </svg>
+        <p>Ganzheitliche Energieversorgung für Unternehmen. Solarstrom vom eigenen Dach, intelligent ergänzt durch strukturierte Beschaffung.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Lösungen</h4>
+        <ul>
+          <li><a href="https://www.alva-energie.de/loesungen/wohnungswirtschaft">Wohnungswirtschaft</a></li>
+          <li><a href="#">Gewerbestrom</a></li>
+          <li><a href="#">Strombeschaffung</a></li>
+          <li><a href="#">Energiemanagement</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Unternehmen</h4>
+        <ul>
+          <li><a href="https://www.alva-energie.de/ueber-uns">Über ALVA</a></li>
+          <li><a href="https://www.alva-energie.de/projekte">Projekte</a></li>
+          <li><a href="https://www.alva-energie.de/karriere">Karriere</a></li>
+          <li><a href="https://www.alva-energie.de/presse">Presse</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li>030 62939213</li>
+          <li>info@alva-energie.de</li>
+          <li><a href="#kontakt">Anfrage stellen</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ALVA Energie GmbH</span>
+      <div class="footer-legal">
+        <a href="https://www.alva-energie.de/impressum">Impressum</a>
+        <a href="https://www.alva-energie.de/datenschutz">Datenschutz</a>
+        <a href="#">AGB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Language switcher (placeholder)
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // Form submission (mock — wire up to Zoho + Slack in build)
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const datenschutz = document.getElementById('datenschutz').checked;
+    if (!datenschutz) {
+      alert('Bitte stimmen Sie der Datenschutzerklärung zu.');
+      return;
+    }
+    const data = {
+      name: form.name.value.trim(),
+      firma: form.firma.value.trim(),
+      email: form.email.value.trim(),
+      telefon: form.telefon.value.trim(),
+      nachricht: form.nachricht.value.trim(),
+      utm: new URLSearchParams(window.location.search).get('utm_source') || null,
+      timestamp: new Date().toISOString()
+    };
+    if (!data.name || !data.firma || !data.email) {
+      alert('Bitte füllen Sie Name, Unternehmen und E-Mail aus.');
+      return;
+    }
+    // DRAFT MOCK — production wires to Zoho CRM, Slack webhook, transactional email
+    console.log('Lead submitted:', data);
+    document.getElementById('formError').classList.remove('show');
+    document.getElementById('formSuccess').classList.add('show');
+    form.reset();
+    document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  // Scroll-reveal animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
