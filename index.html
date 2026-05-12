@@ -1437,12 +1437,29 @@
       alert('Bitte füllen Sie Name, Unternehmen und E-Mail aus.');
       return;
     }
-    // DRAFT MOCK — production wires to Zoho CRM, Slack webhook, transactional email
-    console.log('Lead submitted:', data);
-    document.getElementById('formError').classList.remove('show');
-    document.getElementById('formSuccess').classList.add('show');
-    form.reset();
-    document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Wird gesendet…';
+
+    fetch('/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(res => {
+        if (!res.ok) throw new Error();
+        document.getElementById('formError').classList.remove('show');
+        document.getElementById('formSuccess').classList.add('show');
+        form.reset();
+        document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      })
+      .catch(() => {
+        document.getElementById('formError').classList.add('show');
+      })
+      .finally(() => {
+        btn.disabled = false;
+        btn.textContent = 'Anfrage senden →';
+      });
   });
 
   // Scroll-reveal animation
