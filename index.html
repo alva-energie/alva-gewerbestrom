@@ -237,6 +237,15 @@
     border-radius: 16px;
     max-width: 320px;
   }
+  .hero-image-stat .stat-qualifier {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 4px;
+  }
   .hero-image-stat .stat-num {
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
@@ -1004,6 +1013,7 @@
       <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=1800&q=85&auto=format&fit=crop"
            alt="Gewerbegebäude mit Solaranlage auf dem Dach">
       <div class="hero-image-stat">
+        <div class="stat-qualifier">bis zu</div>
         <div class="stat-num">50%</div>
         <div class="stat-label">günstiger pro kWh als konventioneller Netzstrom</div>
       </div>
@@ -1078,12 +1088,15 @@
     </div>
 
     <div class="pricing-callout reveal">
-      <div class="pricing-callout-num">50%</div>
+      <div>
+        <div style="font-family:'Outfit',sans-serif;font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;">bis zu</div>
+        <div class="pricing-callout-num">50%</div>
+      </div>
       <div class="pricing-callout-divider"></div>
       <div>
         <div class="pricing-callout-text">
           <strong>Ersparnis pro Kilowattstunde</strong><br>
-          gegenüber konventionellem Gewerbestrom.
+          gegenüber konventionellem Gewerbestrom — je nach Standort und Verbrauchsprofil.
         </div>
         <div class="pricing-callout-footnote">¹ Vergleichsrechnung Dachstrom vs. durchschnittlicher Gewerbestromtarif Deutschland. Genaue Kalkulation im individuellen Angebot.</div>
       </div>
