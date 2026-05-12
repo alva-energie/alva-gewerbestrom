@@ -951,22 +951,10 @@
 </head>
 <body>
 
-<!-- ─────────── TOPBAR ─────────── -->
-<div class="topbar">
-  <span class="topbar-symbol">
-    <svg viewBox="0 0 216 132" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M143.5 0H122H122.509L180.762 105.665L194.382 131H216L143.5 0ZM122.509 0H122L180.762 105.665L122.509 0Z" fill="white"/>
-      <path d="M105.993 0H72.0629L0 131.447H39.5855L52.977 106.025H134.779L148.171 131.447H188.11L116.047 0H105.993ZM52.977 106.025L93.8977 28.2671L134.779 106.025H52.977Z" fill="white"/>
-    </svg>
-  </span>
-  <span>Treffen Sie uns auf dem P5 Property Kongress, 20.–21. Mai 2026.</span>
-  <a href="#">Termin buchen</a>
-</div>
-
 <!-- ─────────── NAV ─────────── -->
 <div class="nav-wrap">
   <nav class="nav-pill">
-    <a href="#" class="nav-logo" aria-label="ALVA Energie">
+    <a href="https://www.alva-energie.de" class="nav-logo" aria-label="ALVA Energie">
       <svg viewBox="0 0 1001 406" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
         <rect x="10" y="10" width="980.33" height="385.493" stroke="white" stroke-width="20"/>
         <path d="M281.993 137H248.063L176 268.447H215.585L228.977 243.025H310.779L324.171 268.447H364.11L292.047 137H281.993ZM228.977 243.025L269.898 165.267L310.779 243.025H228.977Z" fill="white"/>
@@ -982,11 +970,6 @@
       <a href="#prozess">Wechsel</a>
     </div>
     <div class="nav-right">
-      <div class="lang-switch" aria-label="Sprache wählen">
-        <button class="active" type="button">DE</button>
-        <span class="sep">/</span>
-        <button type="button">EN</button>
-      </div>
       <a href="#kontakt" class="btn btn-primary">Anfrage stellen</a>
     </div>
   </nav>
@@ -1408,14 +1391,6 @@
 </footer>
 
 <script>
-  // Language switcher (placeholder)
-  document.querySelectorAll('.lang-switch button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
-
   // Form submission (mock — wire up to Zoho + Slack in build)
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
