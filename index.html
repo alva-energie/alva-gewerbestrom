@@ -1453,7 +1453,8 @@
         form.reset();
         document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
       })
-      .catch(() => {
+      .catch(err => {
+        console.error('Submit error:', err);
         document.getElementById('formError').classList.add('show');
       })
       .finally(() => {
